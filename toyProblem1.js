@@ -1,5 +1,6 @@
 /*
 ********BEFORE YOU WORK ON THIS, IMPLEMENT THE FUNCTIONS EACH, REDUCE(use each), and FILTER (use reduce)***********
+*/
 
 // Each
 function each (collection, callback){
@@ -68,6 +69,7 @@ function filter (array, test){
 
 
 *********************FUNCTIONS ABOVE HERE***********************************
+/*
 Given a string, remove any characters that are not unique from the string.
 e.g.  'abccdefe' => 'abdf'
 write a function called onlyUnique that takes in a string and returns a string.
