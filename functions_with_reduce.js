@@ -45,7 +45,7 @@ function reduce (array, callback, accumulator){
 // filter with reduce
 function filter (array, test){
 
-  var result = reduce (array, function (init, prev){
+  return reduce (array, function (init, prev){
   
     if (test(prev)){
     
@@ -56,8 +56,6 @@ function filter (array, test){
     return init;
     
   }, []);
-  
-  return result;
 
 }
 
