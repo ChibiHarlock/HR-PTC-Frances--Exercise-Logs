@@ -62,13 +62,11 @@ function filter (array, test){
 // map with reduce
 function map (array, callback){
 
-  var result = reduce (array, function(init, prev){
+  return reduce (array, function(init, prev){
   
     init.push(callback(prev));
     return init;
   
   }, []);
-  
-  return result;
 
 }
