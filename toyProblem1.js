@@ -7,7 +7,7 @@ function each (collection, callback){
 
   if(Array.isArray(collection)){
   
-    for (var i = 0; i < collection, i++){
+    for (var i = 0; i < collection.length; i++){
     
       callback(collection[i], i, collection);
     
@@ -15,7 +15,7 @@ function each (collection, callback){
   
   } else {
   
-    for (var key in collections) {
+    for (var key in collection) {
     
       callback(collection[key], key, collection);
     
@@ -28,7 +28,7 @@ function each (collection, callback){
 // reduce with each
 function reduce (array, callback, accumulator){
 
-  each(array, function(value){}){
+  each(array, function(value){
   
     // check if the accumulator is undefined
     if (accumulator === undefined){
@@ -41,7 +41,7 @@ function reduce (array, callback, accumulator){
     
     }
   
-  };
+  });
   
   return accumulator;
 
@@ -88,12 +88,13 @@ function onlyUnique(str){
   
   }, {});
   
-  filter (result, function(key){
+  var finalResult = filter (result, function(key){
   
     return hash[key] === 1;
   
   }).join("");
-
+  
+  return finalResult;
 }
 
 console.log(onlyUnique('abccdefe'));
