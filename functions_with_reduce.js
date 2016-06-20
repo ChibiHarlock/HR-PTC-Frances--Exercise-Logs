@@ -22,7 +22,7 @@ function each (collection, callback){
 }
 
 // reduce with each
-functoin reduce (array, callback, accumulator){
+function reduce (array, callback, accumulator){
 
   each (array, function(val){
   
