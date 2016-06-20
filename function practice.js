@@ -50,11 +50,14 @@ map(numbers, function(num){ return num * 4;}); => [4,8,12]
 */
 function map(array, callback){
 
+  var result = [];
   
-  filter(array, function(){
-  
-    return 
-  
+  each (array, function(value){
+    
+    result.push(callback(value));
+    
   });
+  
+  return result;
 
 }
