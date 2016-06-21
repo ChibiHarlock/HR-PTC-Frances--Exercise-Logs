@@ -45,19 +45,31 @@ function reduce (array, callback, accumulator) {
 
 }
 
-function nextGivenHigherNum (num, array) {
+function nextNumber (num, array) {
 
   return reduce (array, function(smallNum, curr){
-  
-    if (curr < smallNum && curr > num){
-      
-      smallNum = curr;
-      
-    }
+  	
+  	// return the smallest number
+  	if (curr > num){
+  		if (curr % 2 !== 0){
+  			
+  			if ( curr % 3 === 0){
+  				
+  				smallNum = curr;
+  				
+  			}
+  			
+  		}
+  		
+  	} 
+  	
+  	
+  	
     return smallNum;
   
-  }, 0);
+  });
 
 }
 
-console.log(nextGivenHigherNum(12, [3, 9, 15, 21]));
+console.log(nextNumber(21, [28,3,9,4,25,30,35,15,105,5,2,12,14,21,18,19] ));
+
