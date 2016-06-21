@@ -45,13 +45,19 @@ function reduce (array, callback, accumulator) {
 
 }
 
-function nextGivenHigherNum (array) {
+function nextGivenHigherNum (num, array) {
 
   return reduce (array, function(smallNum, curr){
   
-    if (curr > smallNum
+    if (curr < smallNum && curr > num){
+      
+      smallNum = curr;
+      
+    }
     return smallNum;
   
   }, 0);
 
 }
+
+console.log(nextGivenHigherNum(12, [3, 9, 15, 21]));
