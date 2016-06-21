@@ -39,9 +39,9 @@ function reduce (array, callback, accumulator){
       
     }
     
-    return accumulator;
-    
   });
+  
+  return accumulator;
   
 }
 
@@ -49,7 +49,7 @@ function flatten (array){
   
   return reduce (array, function (result, curr){
     
-    result.push(curr);
+    result.concat(curr);
     return result;
     
   }, []);
