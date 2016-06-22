@@ -41,6 +41,6 @@ function minMax (array){
     
   }
   
-  return [].push(min(),max());
+  return [(min(),max()];
   
 }
