@@ -23,6 +23,7 @@ function largest(n , arr){
   
   
 }
+console.log(largest(3, [1,89,23,5,43,900,88,243]));
 
 // Without function
 // returns items that are not in the exclusions array
@@ -33,13 +34,31 @@ function largest(n , arr){
 
 
 // WRITE CODE HERE
+// reject function
+function reject(array, test){
+	
+	return array.reduce(function(result, curr){
+		
+		if(!test(curr)){
+			
+			result.push(curr);
+			
+		}
+		return result;
+		
+	}, []);
+	
+}
+
 function without(arr, exclusions){
 
   var value = exclusions;
-  return arr.reject(function(item){
+  return reject(arr, function(item){
     
     return value.indexOf(item) !== -1;
     
   });
   
 }
+
+console.log(without([1,2,1,3,1,4], [1,2]));
