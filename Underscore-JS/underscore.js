@@ -102,3 +102,30 @@ function reduceRight(arr, iterator, accumulator){
   return accumulator;
   
 }
+
+//find
+/*
+var even = find([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
+=> 2
+once a number passes the test, it returns that number and stops looking through the list
+undefined if it returns no passing test 
+*/
+
+function find(arr,test){
+  
+  var result;
+  
+  each(arr, function(value){
+    
+    if(test(value) && result === undefined){
+      
+      result = value;
+      
+    }
+    
+  });
+  
+  return result;
+  
+}
+
