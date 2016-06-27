@@ -129,3 +129,24 @@ function find(arr,test){
   
 }
 
+// reject with reduce
+/*
+Returns the values in list without the elements that the truth test (predicate) passes. The opposite of filter.
+var odds = _.reject([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
+=> [1, 3, 5]
+*/
+function reject(arr, test){
+  
+  return reduce(arr, function(result, curr){
+    
+    if(!test(curr)){
+      
+      result.push(curr);
+      
+    }
+    return  result;
+    
+  }, []);
+  
+}
+
