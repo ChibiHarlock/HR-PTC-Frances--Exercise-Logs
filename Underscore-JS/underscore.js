@@ -169,3 +169,47 @@ function every(arr, test){
   },true);
   
 }
+
+/*
+some with reduce
+
+_.some([null, 0, 'yes', false]);
+=> true
+*/
+
+function some(arr, test){
+  
+  return reduce(arr, function(result, curr){
+    
+    if(test(curr)){
+      
+      result = true;
+      
+    }
+    return result;
+    
+  }, false);
+  
+}
+
+/*
+contains with reduce
+Returns true if the value is present in the list. Uses indexOf internally, if list is an Array. Use fromIndex to start your search at a given index.
+
+contains([1, 2, 3], 3);
+=> true
+*/
+function contains (arr, target){
+  
+  return reduce(arr, function(isTruthy, curr){
+  	
+  	if(target === curr){
+  		
+  		isTruthy = true;
+  	}
+  	return isTruthy;
+  	
+  }, false);
+  
+}
+console.log(contains([1, 2, 3], 3));
