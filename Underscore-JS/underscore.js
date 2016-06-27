@@ -228,5 +228,49 @@ function pluck(collection, key){
  });
   
 }
-var stooges = [{name: 'moe', age: 40}, {name: 'larry', age: 50}, {name: 'curly', age: 60}];
-console.log(pluck(stooges, 'name'));
+
+/*
+countBy
+countBy([1, 2, 3, 4, 5], function(num) {
+  return num % 2 == 0 ? 'even': 'odd';
+});
+=> {odd: 3, even: 2}
+*/
+/*
+countBy
+countBy([1, 2, 3, 4, 5], function(num) {
+  return num % 2 == 0 ? 'even': 'odd';
+});
+=> {odd: 3, even: 2}
+*/
+function countBy(arr, test){
+  return reduce(arr, function(obj, curr){
+  	// returning a object
+  	// the result of the test will be the key, and increment the result after every return
+  	// visual steps
+  	// first obj is {}
+  	/*
+  	then the first key is made from the result of the test on the 1st element
+  	in our example, it's 'odd' and the value is itself or 0
+  	we use || 0 to handle iterations and keep track of occurences
+  	so now obj is {odd: 0}
+  	increment the key to make it 1
+  	return the obj
+  	next, the curr is 2, so 2 is tested and it returns from the test 'even'
+  	since even has not been a key yet, it's created.
+  	obj = {odd: 1, even: 0};
+  	increment the current key, even : 1
+  	third, the curr is 3, so 3 is tested and returns 'odd'
+  	odd already has been created so the keys are the same
+  	increment the occurence to 2 for odd
+  	obj = {odd: 2, even: 1}
+  	repeat until you get obj = {odd: 3, even: 2}
+  	
+  	*/
+  	obj[test(curr)] = obj[test(curr)] || 0;
+  	obj[test(curr)]++;
+  	return obj;
+  	
+  },{});
+  
+}
