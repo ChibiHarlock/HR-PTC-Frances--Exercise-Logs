@@ -24,7 +24,7 @@ function each (collection, iterator){
   
   }
 }
-  
+
 // map with each
 /*
 map([1, 2, 3], function(num){ return num * 3; });
@@ -132,7 +132,7 @@ function find(arr,test){
 // reject with reduce
 /*
 Returns the values in list without the elements that the truth test (predicate) passes. The opposite of filter.
-var odds = _.reject([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
+var odds = reject([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
 => [1, 3, 5]
 */
 function reject(arr, test){
@@ -150,3 +150,22 @@ function reject(arr, test){
   
 }
 
+// every
+/*
+every([2, 4, 5], function(num) { return num % 2 == 0; });
+=> false
+*/
+function every(arr, test){
+  
+  return reduce(arr, function(result,curr){
+    
+    if(!test(value)){
+      
+      result = false;
+      
+    }
+    return result;
+    
+  },true);
+  
+}
