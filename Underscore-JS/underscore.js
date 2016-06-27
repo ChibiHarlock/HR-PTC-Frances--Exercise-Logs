@@ -212,4 +212,21 @@ function contains (arr, target){
   }, false);
   
 }
-console.log(contains([1, 2, 3], 3));
+
+/*
+pluck 
+var stooges = [{name: 'moe', age: 40}, {name: 'larry', age: 50}, {name: 'curly', age: 60}];
+_.pluck(stooges, 'name');
+=> ["moe", "larry", "curly"]
+*/
+function pluck(collection, key){
+  
+ return map(collection, function(val){
+   
+   return val[key];
+   
+ });
+  
+}
+var stooges = [{name: 'moe', age: 40}, {name: 'larry', age: 50}, {name: 'curly', age: 60}];
+console.log(pluck(stooges, 'name'));
