@@ -426,3 +426,22 @@ function uniq(arr, isSorted){
   
 }
 console.log(uniq([1,2,3,1,2]));
+
+/*
+indexOf
+*/
+function indexOf(arr,target){
+  
+  var result = -1;
+  each(arr, function(val,i){
+  	
+  	if(val === target){
+  		
+  		result = i;
+  		
+  	}
+  	
+  });
+  
+  return result;
+}
