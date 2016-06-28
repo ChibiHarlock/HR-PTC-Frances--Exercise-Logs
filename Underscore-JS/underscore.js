@@ -296,3 +296,32 @@ function size(list){
   },0);
   
 }
+
+/*
+partition
+split an array up based off of a predicate
+partition([0, 1, 2, 3, 4, 5], isOdd);
+=> [[1, 3, 5], [0, 2, 4]]
+*/
+function partition(arr, predicate){
+  
+  var result = [];
+  var other = [];
+  
+  each(arr, function(val){
+  	
+  	if(predicate(val)){
+  		
+  		result.push(val);
+  		
+  	} else{
+  		
+  		other.push(val);
+  		
+  	}
+  	
+  	
+  });
+  
+  return [result,other];
+}
