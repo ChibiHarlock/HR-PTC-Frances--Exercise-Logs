@@ -390,3 +390,39 @@ function flatten(arr, shallow){
   	return flat.concat((Array.isArray(curr) && !shallow) ? flatten(curr) : curr);
   	
   },[]);
+}
+/*
+without
+*/
+function without(arr, exclusions){
+
+  var value = exclusions;
+  return reject(arr, function(item){
+    
+    return value.indexOf(item) !== -1;
+    
+  });
+  
+}
+/*
+uniq
+*/
+function uniq(arr, isSorted){
+  if(!isSorted){
+    
+    arr.sort(function(a,b){
+      
+      return a-b;
+      
+    });
+  }
+  return reduce(arr, function(result, curr){
+    
+    if(result.indexOf(curr) === -1){
+      result.push(curr);
+    }
+    return result;
+  }, []);
+  
+}
+console.log(uniq([1,2,3,1,2]));
