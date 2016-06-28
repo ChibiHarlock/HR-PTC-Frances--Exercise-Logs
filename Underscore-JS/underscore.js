@@ -310,16 +310,7 @@ function partition(arr, predicate){
   
   each(arr, function(val){
   	
-  	if(predicate(val)){
-  		
-  		result.push(val);
-  		
-  	} else{
-  		
-  		other.push(val);
-  		
-  	}
-  	
+  	predicate(val) ? result.push(val) : other.push(val);
   	
   });
   
