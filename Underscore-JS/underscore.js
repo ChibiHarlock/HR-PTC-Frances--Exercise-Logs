@@ -274,3 +274,25 @@ function countBy(arr, test){
   },{});
   
 }
+
+/*
+shuffle
+shuffle([1, 2, 3, 4, 5, 6]);
+=> [4, 1, 6, 3, 5, 2]
+*/
+
+/*
+size
+size({one: 1, two: 2, three: 3});
+=> 3
+*/
+function size(list){
+  
+  return reduce(list, function(size){
+    
+    size++;
+    return size;
+    
+  },0);
+  
+}
