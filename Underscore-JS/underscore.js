@@ -316,3 +316,57 @@ function partition(arr, predicate){
   
   return [result,other];
 }
+
+////////////Array functions
+/*
+first
+first([1,2,3,4])
+=> 1
+*/
+function first(arr, n){
+  
+  return n === undefined ? arr[0] : arr.slice(0,n);
+  
+}
+
+/*
+last
+
+*/
+function last(arr,n){
+  
+  return n === undefined ? arr[arr.length-1] : arr.slice(-n);
+  
+}
+
+/*
+initial
+initial([8,4,5])
+=> [8,4]
+*/
+function initial(arr, n){
+  
+  // if n is defined then pass n to exclude the last n elements from the result 
+  return n === undefined ? arr.slice(0,arr.length-1) : arr.slice(0,-n); 
+  
+}
+
+/*
+compact
+Returns a copy of the array with all falsy values removed. In JavaScript, false, null, 0, "", undefined and NaN are all falsy.
+
+_.compact([0, 1, false, 2, '', 3]);
+=> [1, 2, 3]
+*/
+function compaxt(arr){
+  
+  return reduce(arr, function(truthy, curr){
+  	if(curr){
+  		
+  		truthy.push(curr);
+  	}
+  	return truthy;
+  	
+  },[]);
+}
+console.log(compact([1,false,"",null,2,3]));
