@@ -369,4 +369,24 @@ function compaxt(arr){
   	
   },[]);
 }
-console.log(compact([1,false,"",null,2,3]));
+
+/*
+flatten
+Flattens a nested array (the nesting can be to any depth). If you pass shallow, the array will only be flattened a single level.
+
+_.flatten([1, [2], [3, [[4]]]]);
+=> [1, 2, 3, 4];
+
+_.flatten([1, [2], [3, [[4]]]], true);
+=> [1, 2, 3, [[4]]];
+*/
+
+function flatten(arr, shallow){
+  
+  return reduce(arr, function(flat, curr){
+  	
+  	// use concat to flatten array, if the current value is a array, use recursion to call flatten on the current Array
+  	// or concat the curr value
+  	return flat.concat((Array.isArray(curr) && !shallow) ? flatten(curr) : curr);
+  	
+  },[]);
