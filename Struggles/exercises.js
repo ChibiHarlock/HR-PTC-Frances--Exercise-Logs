@@ -20,3 +20,14 @@ function udacityizer(str){
 
 }
 
+/*
+this version uses indices, the string.toUpperCase method and the slice method
+
+*/
+function udacityizer(s){
+  
+  s = s[1].toUpperCase() + s.slice(2);
+  return s;
+  
+}
+
