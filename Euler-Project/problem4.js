@@ -1,18 +1,17 @@
 function palindrome(){
-	var result = [];
-	var p, revr;
+	var p;
 	var max = 0;
+	var equation;
 	for(var i = 999; i > 0; i--){
 		
 		for(var j = 999; j > 0; j--){
 			
 			p = i * j;
-			revr = p.toString().split("").reverse().join("");
-			if(p == revr){
+			if(isPalindrome(p)){
 				if(p > max){
-					
 					max = p;
-					break;
+					equation = (i + " * " + j);
+					console.log(equation);
 				}
 				
 			}
@@ -24,3 +23,13 @@ function palindrome(){
 	return max;
 	
 } palindrome();
+
+
+function isPalindrome(num){
+	
+	var n = num.toString();
+	var reverse = n.toString().split("").reverse().join("");
+	
+	return n === reverse;
+	
+}
