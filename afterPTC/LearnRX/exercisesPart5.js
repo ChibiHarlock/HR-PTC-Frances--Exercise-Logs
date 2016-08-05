@@ -128,7 +128,7 @@ function concatMap(arr, projection){
 }
 
 // 14. Use concatMap() to retrieve id, title, and 150x200 box art url for every video
-var complex = concatMap(movieLists, function(movie){
+concatMap(movieLists, function(movie){
 	return concatMap(movie.videos, function(video){
 		return filter(video.boxarts, function(boxart){
 			return boxart.width === 150;
